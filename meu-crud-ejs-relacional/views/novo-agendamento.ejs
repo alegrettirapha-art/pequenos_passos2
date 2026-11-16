@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Novo Agendamento - Pequenos Passos</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Pequenos Passos</h1>
+    <h2>Agendar Consulta</h2>
+</header>
+
+<main class="container">
+
+    <form action="/agendamentos/cadastrar" method="POST">
+
+        <label>Criança:</label>
+        <select name="crianca_id" required>
+            <option value="">Selecione uma criança</option>
+
+            <% criancas.forEach(crianca => { %>
+                <option value="<%= crianca.id_crianca %>">
+                    <%= crianca.nome %>
+                </option>
+            <% }) %>
+
+        </select>
+
+        <label>Data da consulta:</label>
+        <input type="date" name="data_consulta" required>
+
+        <label>Horário:</label>
+        <input type="time" name="horario" required>
+
+        <label>Observações:</label>
+        <textarea name="observacoes"></textarea>
+
+        <button type="submit">Agendar consulta</button>
+
+        <a href="/agendamentos">Cancelar</a>
+
+    </form>
+
+</main>
+
+</body>
+</html>

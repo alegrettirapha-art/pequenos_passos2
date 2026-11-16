@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Grupos - Pequenos Passos</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Pequenos Passos</h1>
+    <h2>Grupos de Atendimento</h2>
+</header>
+
+<main class="container">
+
+    <h2>Organização dos grupos</h2>
+
+    <p>Consulte as crianças cadastradas para organizar os atendimentos da clínica.</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Criança</th>
+                <th>Responsável</th>
+                <th>Data de nascimento</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% criancas.forEach(crianca => { %>
+                <tr>
+                    <td><%= crianca.nome %></td>
+                    <td><%= crianca.nome_responsavel %></td>
+                    <td><%= String(crianca.data_nascimento).slice(0, 10) %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <a href="/dashboard">Voltar ao painel</a>
+
+</main>
+
+</body>
+</html>
